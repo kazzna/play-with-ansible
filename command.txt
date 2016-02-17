@@ -1,1 +1,2 @@
+ssh-add -t 3600 ~/.ssh/id_ecdsa
 ansible-playbook -i hosts --ask-sudo-pass -vvv site.yml
