@@ -1,0 +1,39 @@
+---
+- name: Add git repository
+  become: yes
+  become_method: sudo
+  become_user: root
+  apt_repository: >-
+    repo='ppa:git-core/ppa'
+    state=present
+
+- name: Install utils
+  become: yes
+  become_method: sudo
+  become_user: root
+  apt: >-
+    name={{ item }}
+    state=latest
+    update_cache=yes
+    cache_valid_time=3600
+  with_items:
+    - git
+    - silversearcher-ag
+    - tmux
+    - tree
+    - vim
+    - zsh
+
+- name: Checkout pyenv
+  git: >-
+    dest="~/.pyenv"
+    repo="https://github.com/yyuu/pyenv.git"
+    clone=yes
+    version="v20160202"
+
+- name: Checkout pyenv-virtualenv
+  git: >-
+    dest="~/.pyenv/plugins/pyenv-virtualenv"
+    repo="https://github.com/yyuu/pyenv-virtualenv.git"
+    clone=yes
+    version="v20160202"

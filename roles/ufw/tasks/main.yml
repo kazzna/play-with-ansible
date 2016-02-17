@@ -1,0 +1,25 @@
+---
+- name: Set ufw default deny
+  become: yes
+  become_method: sudo
+  become_user: root
+  ufw: >-
+    policy=deny
+    log=yes
+  notify: Restart ufw
+
+- name: Set ufw ports open
+  become: yes
+  become_method: sudo
+  become_user: root
+  ufw: >-
+    rule=allow
+    port={{ item.port }}
+  with_items:
+    - port: 22
+    - port: 80
+    - port: 10003
+    - port: 10005
+    - port: 10009
+    - port: 8484
+  notify: Restart ufw

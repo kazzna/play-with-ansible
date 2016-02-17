@@ -1,0 +1,9 @@
+---
+- name: Setup ubuntu trusty server
+  hosts: test-server
+
+  roles:
+    - ufw
+    - trusty-utils
+    - trusty-docker
+    - trusty-nginx
