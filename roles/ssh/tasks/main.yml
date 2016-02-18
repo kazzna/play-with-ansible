@@ -9,4 +9,5 @@
     regexp='^PermitRootLogin without-password'
     backrefs=yes
     state=present
-
+  notify:
+    Restrart sshd
