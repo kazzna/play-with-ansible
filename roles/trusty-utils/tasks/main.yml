@@ -37,3 +37,10 @@
     repo="https://github.com/yyuu/pyenv-virtualenv.git"
     clone=yes
     version="v20160202"
+
+- name: Checkout nvm
+  git: >-
+    dest="~/.nvm"
+    repo="https://github.com/creationix/nvm"
+    clone=yes
+    version="v0.31.0"
