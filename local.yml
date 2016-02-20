@@ -1,0 +1,6 @@
+---
+- name: Setup ubuntu trusty server
+  hosts: local
+
+  roles:
+    - trusty-utils
