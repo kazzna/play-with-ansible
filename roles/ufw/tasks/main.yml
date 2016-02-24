@@ -14,7 +14,7 @@
   become_user: root
   ufw:
     rule: allow
-    port: {{ item.port }}
+    port: "{{ item.port }}"
   with_items:
     - port: 22
     - port: 80

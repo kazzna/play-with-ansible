@@ -13,7 +13,7 @@
   become_method: sudo
   become_user: root
   apt_repository:
-    repo: '{{ item }} https://apt.dockerproject.org/repo ubuntu-trusty main'
+    repo: "{{ item }} https://apt.dockerproject.org/repo ubuntu-trusty main"
     state: present
   with_items:
     - "deb"
@@ -23,7 +23,7 @@
   become_method: sudo
   become_user: root
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: latest
     update_cache: yes
     cache_valid_time: 3600

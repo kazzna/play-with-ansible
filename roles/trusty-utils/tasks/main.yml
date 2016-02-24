@@ -12,7 +12,7 @@
   become_method: sudo
   become_user: root
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: latest
     update_cache: yes
     cache_valid_time: 3600
