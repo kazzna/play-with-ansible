@@ -1,0 +1,8 @@
+---
+- name: Run CentOS Container
+  docker:
+    image: "centos:centos6"
+    name: sample002
+    tty: yes
+    net: host
+    docker_api_version: 1.18

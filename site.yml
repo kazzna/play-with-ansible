@@ -6,5 +6,5 @@
     - ufw
     - ssh
     - trusty-utils
-    - trusty-docker
     - trusty-nginx
+    - docker-centos
