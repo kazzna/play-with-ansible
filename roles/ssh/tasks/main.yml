@@ -3,11 +3,11 @@
   become: yes
   become_method: sudo
   become_user: root
-  lineinfile: >-
-    dest='/etc/ssh/sshd_config'
-    line='PermitRootLogin no'
-    regexp='^PermitRootLogin without-password'
-    backrefs=yes
-    state=present
+  lineinfile:
+    dest: '/etc/ssh/sshd_config'
+    line: 'PermitRootLogin no'
+    regexp: '^PermitRootLogin without-password'
+    backrefs: yes
+    state: present
   notify:
     Restrart sshd

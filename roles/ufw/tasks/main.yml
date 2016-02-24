@@ -3,18 +3,18 @@
   become: yes
   become_method: sudo
   become_user: root
-  ufw: >-
-    policy=deny
-    log=yes
+  ufw:
+    policy: deny
+    log: yes
   notify: Restart ufw
 
 - name: Set ufw ports open
   become: yes
   become_method: sudo
   become_user: root
-  ufw: >-
-    rule=allow
-    port={{ item.port }}
+  ufw:
+    rule: allow
+    port: {{ item.port }}
   with_items:
     - port: 22
     - port: 80

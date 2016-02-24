@@ -3,19 +3,19 @@
   become: yes
   become_method: sudo
   become_user: root
-  apt_repository: >-
-    repo='ppa:git-core/ppa'
-    state=present
+  apt_repository:
+    repo: 'ppa:git-core/ppa'
+    state: present
 
 - name: Install utils
   become: yes
   become_method: sudo
   become_user: root
-  apt: >-
-    name={{ item }}
-    state=latest
-    update_cache=yes
-    cache_valid_time=3600
+  apt:
+    name: {{ item }}
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
   with_items:
     - git
     - silversearcher-ag
@@ -25,22 +25,22 @@
     - zsh
 
 - name: Checkout pyenv
-  git: >-
-    dest="~/.pyenv"
-    repo="https://github.com/yyuu/pyenv.git"
-    clone=yes
-    version="v20160202"
+  git:
+    dest: "~/.pyenv"
+    repo: "https://github.com/yyuu/pyenv.git"
+    clone: yes
+    version: "v20160202"
 
 - name: Checkout pyenv-virtualenv
-  git: >-
-    dest="~/.pyenv/plugins/pyenv-virtualenv"
-    repo="https://github.com/yyuu/pyenv-virtualenv.git"
-    clone=yes
-    version="v20160202"
+  git:
+    dest: "~/.pyenv/plugins/pyenv-virtualenv"
+    repo: "https://github.com/yyuu/pyenv-virtualenv.git"
+    clone: yes
+    version: "v20160202"
 
 - name: Checkout nvm
-  git: >-
-    dest="~/.nvm"
-    repo="https://github.com/creationix/nvm"
-    clone=yes
-    version="v0.31.0"
+  git:
+    dest: "~/.nvm"
+    repo: "https://github.com/creationix/nvm"
+    clone: yes
+    version: "v0.31.0"

@@ -4,6 +4,6 @@
   become_method: sudo
   become_user: root
   service:
-    name=sshd
-    enabled=yes
-    state=restarted
+    name: sshd
+    enabled: yes
+    state: restarted

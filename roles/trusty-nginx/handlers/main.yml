@@ -4,6 +4,6 @@
   become_method: sudo
   become_user: root
   service:
-    name=nginx
-    enabled=yes
-    state=restarted
+    name: nginx
+    enabled: yes
+    state: restarted

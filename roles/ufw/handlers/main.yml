@@ -4,6 +4,6 @@
   become_method: sudo
   become_user: root
   service:
-    name=ufw
-    enabled=yes
-    state=restarted
+    name: ufw
+    enabled: yes
+    state: restarted
