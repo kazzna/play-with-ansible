@@ -45,4 +45,4 @@
   pip:
     name: "docker-py"
     state: present
-    version: 1.7.1
+    version: "{{ docker_py_version }}"
