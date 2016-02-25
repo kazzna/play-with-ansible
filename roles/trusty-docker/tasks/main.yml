@@ -18,6 +18,12 @@
   with_items:
     - "deb"
 
+- name: Add to docker group
+  user:
+    name: "{{ ansible_user }}"
+    append: yes
+    groups: "docker"
+
 - name: Install pip dependencies
   become: yes
   become_method: sudo
