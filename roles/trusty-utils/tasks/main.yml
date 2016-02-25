@@ -29,18 +29,18 @@
     dest: "~/.pyenv"
     repo: "https://github.com/yyuu/pyenv.git"
     clone: yes
-    version: "v20160202"
+    version: "{{ pyenv_version }}"
 
 - name: Checkout pyenv-virtualenv
   git:
     dest: "~/.pyenv/plugins/pyenv-virtualenv"
     repo: "https://github.com/yyuu/pyenv-virtualenv.git"
     clone: yes
-    version: "v20160202"
+    version: "{{ pyenv_virtualenv_version }}"
 
 - name: Checkout nvm
   git:
     dest: "~/.nvm"
     repo: "https://github.com/creationix/nvm"
     clone: yes
-    version: "v0.31.0"
+    version: "{{ nvm_version }}"
